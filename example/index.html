@@ -11,7 +11,7 @@
         <header>
             <div class="bio">
                 <div class="desc">
-                    <h3><a href="#">@aymanfarhat</a></h3>
+                    <h3><a href="https://twitter.com/aymanfarhat">@aymanfarhat</a></h3>
                     <p>Computer programming is the greatest form of self expression, I enjoy building software, 
                         web apps and writing about code.</p>
                 </div>
@@ -21,27 +21,93 @@
             <div class="data">
                 <ul>
                     <li>
-                        <span class="num" style="color:#99CC00">11,154</span>
-                        <span class="title">Tweets</span>
+                        <span class="num tweets" style="color:#99CC00">0</span>
+                        <span class="title title-tweets">Tweets</span>
                     </li>
                     <li>
-                    <span class="num" style="color:#FFBB33">953</span>
-                        <span class="title">Followers</span>
+                    <span class="num followers" style="color:#FFBB33">0</span>
+                        <span class="title title-followers">Followers</span>
                     </li>
                     <li>
-                        <span class="num" style="color:#FF4444">627</span>
-                        <span class="title">Following</span>
+                        <span class="num following" style="color:#FF4444">0</span>
+                        <span class="title title-following">Following</span>
                     </li>
                 </ul>
             </div>
             <div class="actions">
-                <a href="#">Fork on Github</a>
-                <a href="#">Restart Counter</a>
+                <a href="https://github.com/aymanfarhat/CountToJS">Fork on Github</a>
+                <a href="#" class="restart-count" style="visibility:hidden;">Restart Counter</a>
             </div>
         </div>
     </div>    
 </body>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript" charset="utf-8" src="https://raw.github.com/aymanfarhat/CountToJS/master/countto.js"></script>
-<script type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+/** Target values **/
+var tweets = 11154,
+    followers = 953,
+    following = 627;
+
+/** Elements holding the values **/
+var val_tweets = $('.tweets'),
+    val_followers = $('.followers'),
+    val_following = $('.following');
+
+/** Text description elements **/
+var title_tweets = $('.title-tweets'),
+    title_followers = $('.title-followers'),
+    title_following = $('.title-following');
+
+setTimeout(function(){
+    animateCount();
+},1500);
+
+function animateCount(){
+    $('.restart-count').css('visibility','hidden');
+
+    /** Reset colors **/
+    title_tweets.css('color','#81878b');
+    title_followers.css('color','#81878b');
+    title_following.css('color','#81878b');
+    
+    /** Reset the values **/
+    val_tweets.html("0");
+    val_followers.html("0");
+    val_following.html("0");
+
+    val_tweets.countTo({
+        from: 0,
+        to: tweets,
+        speed: 5000,
+        refreshInterval:20,
+        onComplete:function(){
+            title_tweets.css('color','#669900');
+            val_followers.countTo({
+                from: 0,
+                to: followers,
+                speed: 5000,
+                refreshInterval:20,
+                onComplete:function(){
+                    title_followers.css('color','#FF8800');
+                    val_following.countTo({
+                        from: 0,
+                        to: following,
+                        speed: 5000,
+                        refreshInterval:20,
+                        onComplete:function(){
+                            title_following.css('color','#CC0000');
+                            $('.restart-count').css('visibility','visible');
+                        }
+                    });
+                }
+            });
+        }
+    });
+}
+
+$('.restart-count').click(function(){
+    animateCount();
+});
+</script>
 </html>
