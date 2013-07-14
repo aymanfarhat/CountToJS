@@ -1,0 +1,66 @@
+body{
+    font-size: 14px;
+    font-family: "Ubuntu";
+    background-color:#ecf0f1;
+}
+
+h3 a{
+    text-decoration:none;
+    color: #0099CC;
+}
+
+.container{
+    width: 320px;
+    margin: 3em auto 1em auto;
+    padding:8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    border-radius: 8px;
+    padding-bottom: 1.5em;
+    background-color: #dde1e2;
+    -webkit-box-shadow: #bdc3c7 0 5px 5px;
+    -moz-box-shadow: #bdc3c7 0 5px 5px;
+    box-shadow: #bdc3c7 0 5px 5px;
+    text-align:center;
+}
+
+.data{color:#81878b;margin-top:1em;}
+.data ul{-webkit-padding-start: 0;}
+.data li{
+    width: 32%;
+    text-align: center;
+    display: inline-block;
+    font-size: 2em;
+    border-right: solid 1px #bdc3c7;
+}
+
+.data li:last-child{border:none;}
+
+.data li span.title{
+    display: block;
+    text-transform: uppercase;
+    font-size: .5em;
+    margin-top: .6em;
+    font-weight: 700;
+}
+
+.actions{
+    text-align: center;
+    margin-top:2em;
+}
+
+.actions a{
+    margin: 10px 15px;
+    background-color: #0099CC;
+    width: 150px;
+    color: white;
+    padding: .5em;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    text-decoration:none;
+}
