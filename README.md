@@ -4,7 +4,7 @@ CountToJS Jquery Plugin
 Plugin for animated counting starting from one number and ending with another, along with some useful options.
 
 Sample Usage
-------
+--------
 
 
 	$(document).ready(function(){
@@ -18,3 +18,7 @@ Sample Usage
 			}
 		});
 	});
+
+Example
+--------
+Here is a working [example](http://codepen.io/aymanfarhat/full/DFrKo)
